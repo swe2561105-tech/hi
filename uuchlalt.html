@@ -1,0 +1,338 @@
+```html
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Надад нэг минут өгөөч ❤️</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ff758c,
+                #ff7eb3
+            );
+
+            overflow: hidden;
+        }
+
+        /* Зүрхнүүд */
+        .heart {
+            position: fixed;
+
+            font-size: 25px;
+
+            animation: fall 5s linear infinite;
+
+            top: -50px;
+        }
+
+        @keyframes fall {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+
+        }
+
+        /* Үндсэн хайрцаг */
+        .card {
+
+            width: 90%;
+            max-width: 500px;
+
+            background: white;
+
+            padding: 40px 30px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.25);
+
+            position: relative;
+
+            z-index: 10;
+
+        }
+
+        .emoji {
+
+            font-size: 70px;
+
+            margin-bottom: 10px;
+
+        }
+
+        h1 {
+
+            color: #ff4f81;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .message {
+
+            color: #444;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+        .sorry {
+
+            background: #fff0f5;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            margin: 25px 0;
+
+            color: #555;
+
+            line-height: 1.7;
+
+        }
+
+        .question {
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #ff4f81;
+
+            margin-top: 25px;
+
+        }
+
+        button {
+
+            border: none;
+
+            padding: 14px 25px;
+
+            margin: 10px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+        #yes {
+
+            background: #ff4f81;
+
+            color: white;
+
+        }
+
+        #yes:hover {
+
+            transform: scale(1.08);
+
+            background: #ff2f68;
+
+        }
+
+        #no {
+
+            background: #eeeeee;
+
+            color: #555;
+
+        }
+
+        #no:hover {
+
+            transform: translateX(100px);
+
+        }
+
+        #result {
+
+            display: none;
+
+            margin-top: 25px;
+
+            font-size: 20px;
+
+            color: #ff4f81;
+
+            font-weight: bold;
+
+        }
+
+        .signature {
+
+            margin-top: 25px;
+
+            color: #999;
+
+            font-size: 14px;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Хөвдөг зүрхнүүд -->
+
+    <div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+    <div class="heart" style="left:25%; animation-delay:1s;">💗</div>
+    <div class="heart" style="left:45%; animation-delay:2s;">💕</div>
+    <div class="heart" style="left:65%; animation-delay:0.5s;">❤️</div>
+    <div class="heart" style="left:85%; animation-delay:1.5s;">💖</div>
+
+
+    <!-- Үндсэн хэсэг -->
+
+    <div class="card">
+
+        <div class="emoji">
+            🥺❤️
+        </div>
+
+        <h1>
+            Надад уучлалт гуйх боломж өгөөч...
+        </h1>
+
+        <div class="message">
+
+            Би нэг юм буруу хийчихсэнээ ойлгосон. 😔
+
+        </div>
+
+
+        <div class="sorry">
+
+            Чамайг уурлуулсандаа үнэхээр уучлаарай. ❤️
+
+            <br><br>
+
+            Би өөрийгөө зөвтгөх гэж биш,
+            зүгээр л чамайг гомдоосондоо
+            чин сэтгэлээсээ уучлалт гуйж байна.
+
+            <br><br>
+
+            Чи миний хувьд маш чухал хүн.
+            Тийм болохоор чамайг инээлгэх ёстой байтал
+            уурлуулчихсандаа харамсаж байна. 🥺
+
+        </div>
+
+
+        <div class="question">
+
+            Намайг уучлах уу? 🥺👉👈
+
+        </div>
+
+
+        <button id="yes" onclick="forgive()">
+            За, уучилъя ❤️
+        </button>
+
+
+        <button id="no" onmouseover="moveButton()">
+            Үгүй 😤
+        </button>
+
+
+        <div id="result">
+
+            ЯААААААА 😭❤️
+
+            <br>
+
+            Баярлалаа хайр аа! 🥹
+
+            <br>
+
+            Дахиж ингэж уурлуулахгүй ээ. 🤞❤️
+
+        </div>
+
+
+        <div class="signature">
+
+            Чамд зориулж хийв. ❤️
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function forgive() {
+
+            document.getElementById("result").style.display = "block";
+
+        }
+
+
+        function moveButton() {
+
+            const button = document.getElementById("no");
+
+            const x =
+                Math.random() * 200 - 100;
+
+            const y =
+                Math.random() * 100 - 50;
+
+            button.style.transform =
+                `translate(${x}px, ${y}px)`;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+```
